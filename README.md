@@ -1,2 +1,2 @@
 # py-yatube
- This is a social network
+ This is a social network for videoblogers!
