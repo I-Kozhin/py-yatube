@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'posts',
     'debug_toolbar',    # debug
     'django.contrib.admin',

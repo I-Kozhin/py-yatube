@@ -17,6 +17,7 @@ class Post(models.Model):
     # То есть задавая здесь related_name="posts", мы подсказываем программе, что экземпляр класса Group имеет доступ
     # к объектам Post через аттрибут указанный в related_name
     group = models.ForeignKey(
+        # здесь Group в '', потому что оно объявляется позже, чем образение к нему в Post
         'Group',
         on_delete=models.SET_NULL,
         related_name="posts",
@@ -24,7 +25,9 @@ class Post(models.Model):
         null=True
     )
 
-    # здесь Group в '', потому что оно объявляется позже, чем образение к нему в Post
+    def __str__(self):
+        return self.text
+
     class Meta:
         ordering = ['-pub_date']
 

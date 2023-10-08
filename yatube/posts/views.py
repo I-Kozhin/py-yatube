@@ -4,7 +4,7 @@ from .models import Post, Group
 
 
 def index(request):
-    latest = Post.objects.all()[:11]
+    latest = Post.objects.select_related('author').all()[:11]
     responce = render(
         request,
         "index.html",
